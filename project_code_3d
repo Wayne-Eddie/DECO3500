@@ -90,11 +90,25 @@ def btn_start_pressed():
   pass
 btn_start.pressed(btn_start_pressed)
 
-def btn_p1_pressed():
+def btn_q3_a3_pressed():
   global p, d, q1_rec, q2_rec, q3_rec, q1_state, q2_state, q3_state
-  espnow.broadcast(data=str('invitation'))
+  wait(0.5)
+  txt_wrong_msg.set_hidden(False)
+  txt_wrong_msg.set_pos(130, 105)
+  txt_q3.set_hidden(True)
+  btn_q3_ok.set_hidden(False)
+  btn_q3_ok.set_pos(125, 130)
+  btn_q3_a1.set_hidden(True)
+  btn_q3_a2.set_hidden(True)
+  btn_q3_a3.set_hidden(True)
+  screen.set_screen_bg_color(0xff0000)
+  power.setVibrationEnable(True)
+  q31.set_hidden(True)
+  q3a.set_hidden(True)
+  q3b.set_hidden(True)
+  q3c.set_hidden(True)
   pass
-btn_p1.pressed(btn_p1_pressed)
+btn_q3_a3.pressed(btn_q3_a3_pressed)
 
 def btn_q3_ok_pressed():
   global p, d, q1_rec, q2_rec, q3_rec, q1_state, q2_state, q3_state
@@ -288,6 +302,12 @@ def btn_q2_ok_pressed():
   pass
 btn_q2_ok.pressed(btn_q2_ok_pressed)
 
+def btn_p1_pressed():
+  global p, d, q1_rec, q2_rec, q3_rec, q1_state, q2_state, q3_state
+  espnow.broadcast(data=str('invitation'))
+  pass
+btn_p1.pressed(btn_p1_pressed)
+
 def btn_q1_a1_pressed():
   global p, d, q1_rec, q2_rec, q3_rec, q1_state, q2_state, q3_state
   wait(0.5)
@@ -376,7 +396,7 @@ def btn_rec_conf_pressed():
   q1b.set_pos(40, 80)
   q1b.set_text_font(FONT_MONT_16)
   q1c.set_hidden(False)
-  q1c.set_text('B. North America')
+  q1c.set_text('C. North America')
   q1c.set_pos(40, 100)
   q1c.set_text_font(FONT_MONT_16)
   btn_rej_conf.set_hidden(True)
@@ -461,26 +481,6 @@ def btn_q1_a3_pressed():
     btn_q1_next.set_hidden(False)
   pass
 btn_q1_a3.pressed(btn_q1_a3_pressed)
-
-def btn_q3_a3_pressed():
-  global p, d, q1_rec, q2_rec, q3_rec, q1_state, q2_state, q3_state
-  wait(0.5)
-  txt_wrong_msg.set_hidden(False)
-  txt_wrong_msg.set_pos(130, 105)
-  txt_q3.set_hidden(True)
-  btn_q3_ok.set_hidden(False)
-  btn_q3_ok.set_pos(125, 130)
-  btn_q3_a1.set_hidden(True)
-  btn_q3_a2.set_hidden(True)
-  btn_q3_a3.set_hidden(True)
-  screen.set_screen_bg_color(0xff0000)
-  power.setVibrationEnable(True)
-  q31.set_hidden(True)
-  q3a.set_hidden(True)
-  q3b.set_hidden(True)
-  q3c.set_hidden(True)
-  pass
-btn_q3_a3.pressed(btn_q3_a3_pressed)
 
 
 wait(0.5)
